@@ -24,7 +24,7 @@ io.on("connection", (socket) => {
 })
 
 app.use(logger('dev'))
-
+app.use(express.static('client'));
 app.get('/', (req, res) => {
     res.sendFile(process.cwd() + '/client/index.html')
 })
