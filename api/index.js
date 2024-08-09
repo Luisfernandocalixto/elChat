@@ -10,7 +10,7 @@ dotenv.config()
 
 const port = process.env.PORT ?? 3000
 
-export const app = express()
+const app = express()
 const server = createServer(app)
 app.use(express.static('client'));
 app.use(logger('dev'))
@@ -81,4 +81,3 @@ server.listen(port, () => {
     console.log(`Server running on port ${port}`);
 })
 
-export default server
