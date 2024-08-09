@@ -72,7 +72,7 @@ io.on("connection", async (socket) => {
 
 })
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     // res.sendFile(process.cwd() + '/client/index.html')
     res.sendFile(path.join(__dirname + '/components/index.html'))
 })
