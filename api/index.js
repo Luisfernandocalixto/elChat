@@ -12,7 +12,7 @@ const port = process.env.PORT ?? 3000
 
 const app = express()
 const server = createServer(app)
-app.use(express.static('client'));
+app.use(express.static('components'));
 app.use(logger('dev'))
 const io = new Server(server, {
     connectionStateRecovery: {}
