@@ -1,10 +1,12 @@
 {
-    "version": 2,
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "dest": "/api"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "dest": "/api"
+    }
+  ],
+  "cleanUrls": true,
+  "buildCommand": "npm run dev"
+
+}
