@@ -10,8 +10,10 @@ dotenv.config()
 
 const port = process.env.PORT ?? 3000
 
-const app = express()
+export const app = express()
 const server = createServer(app)
+app.use(express.static('client'));
+app.use(logger('dev'))
 const io = new Server(server, {
     connectionStateRecovery: {}
 })
@@ -70,8 +72,6 @@ io.on("connection", async (socket) => {
 
 })
 
-app.use(logger('dev'))
-app.use(express.static('client'));
 app.get('/', (req, res) => {
     // res.sendFile(process.cwd() + '/client/index.html')
     res.sendFile(path.join(__dirname + '/client/index.html'))
@@ -80,3 +80,5 @@ app.get('/', (req, res) => {
 server.listen(port, () => {
     console.log(`Server running on port ${port}`);
 })
+
+export default server
