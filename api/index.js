@@ -5,14 +5,15 @@ import { createClient } from '@libsql/client';
 // import req from "express/lib/request";
 import { Server } from "socket.io";
 import { createServer } from "node:http";
-import path from 'path';
+import cors from 'cors';
 dotenv.config()
 
 const port = process.env.PORT ?? 3000
 
 const app = express()
 const server = createServer(app)
-app.use(express.static(path.join(__dirname, '../components')));
+app.use(express.static('components'));
+app.use(cors);
 const io = new Server(server, {
     connectionStateRecovery: {}
 })
@@ -73,8 +74,8 @@ io.on("connection", async (socket) => {
 app.use(logger('dev'))
 
 app.get('/', (req, res) => {
-    // res.sendFile(process.cwd() + '/components/index.html')
-    res.sendFile(path.join(__dirname, '../components/index.html'))
+    res.sendFile(process.cwd() + '/components/index.html')
+    // res.sendFile(path.join(__dirname, '../components/index.html'))
 })
 
 
