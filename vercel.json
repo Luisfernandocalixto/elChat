@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "dest": "/api"
+      "dest": "/api/index.js"
     }
   ],
   "cleanUrls": true,
