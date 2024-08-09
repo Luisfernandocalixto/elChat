@@ -5,6 +5,7 @@ import { createClient } from '@libsql/client';
 // import req from "express/lib/request";
 import { Server } from "socket.io";
 import { createServer } from "node:http";
+import path from 'path';
 dotenv.config()
 
 const port = process.env.PORT ?? 3000
@@ -72,7 +73,8 @@ io.on("connection", async (socket) => {
 app.use(logger('dev'))
 app.use(express.static('client'));
 app.get('/', (req, res) => {
-    res.sendFile(process.cwd() + '/client/index.html')
+    // res.sendFile(process.cwd() + '/client/index.html')
+    res.sendFile(path.join(__dirname + '/client/index.html'))
 })
 
 server.listen(port, () => {
