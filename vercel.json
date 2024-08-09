@@ -1,12 +1,14 @@
 {
-  "version": 2,
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "dest": "/api/index.js"
-    }
-  ],
-  "cleanUrls": true,
-  "buildCommand": "npm run dev"
-
-}
+    "version": 2,
+    "routes": [
+      {
+        "src": "/server/(.*)",
+        "dest": "server/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/client/$1"
+      }
+    ]
+  }
+  
