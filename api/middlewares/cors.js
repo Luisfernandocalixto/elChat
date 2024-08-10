@@ -7,8 +7,8 @@ const ACCEPTED_ORIGINS = [
     process.env.HOST3,
     process.env.HOST4,
     process.env.HOST5,
+    process.env.HOST6,
     process.env.HOST7,
-    process.env.HOST8,
 ]
 
 
