@@ -17,7 +17,10 @@ app.use(corsMiddleware());
 const io = new Server(server, {
     connectionStateRecovery: {},
     cors: {
-        methods: ['GET', 'POST',]
+        origin: "http://localhost:3000",
+        methods: ['GET', 'POST'],
+        credentials: true
+
     },
     transports: ['polling']
 })

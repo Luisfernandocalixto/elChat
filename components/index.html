@@ -28,7 +28,9 @@
             auth: {
                 username: await getUsername(),
                 serverOffset: 0,
-            }
+            },
+            withCredentials: true,
+
         })
 
         const form = document.getElementById('form')
