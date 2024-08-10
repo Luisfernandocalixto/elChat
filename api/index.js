@@ -15,7 +15,8 @@ const server = createServer(app)
 app.use(express.static('components'));
 app.use(corsMiddleware());
 const io = new Server(server, {
-    connectionStateRecovery: {}
+    connectionStateRecovery: {},
+    transports: ['polling']
 })
 
 const db = createClient({

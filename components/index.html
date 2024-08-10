@@ -24,6 +24,7 @@
         }
 
         const socket = io({
+            transports: ['polling'],
             auth: {
                 username: await getUsername(),
                 serverOffset: 0,
