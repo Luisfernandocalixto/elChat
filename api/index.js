@@ -16,6 +16,9 @@ app.use(express.static('components'));
 app.use(corsMiddleware());
 const io = new Server(server, {
     connectionStateRecovery: {},
+    cors: {
+        methods: ['GET', 'POST',]
+    },
     transports: ['polling']
 })
 
