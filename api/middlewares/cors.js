@@ -20,5 +20,6 @@ export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) => c
         }
 
         return callback(new Error('Not allowed by CORS'))
-    }
+    },
+    methods: ['GET', 'POST']
 })
